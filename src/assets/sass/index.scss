@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Oswald&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap");
+
+@import "./variables";
+@import "./mixins";
+@import "./base";
+
+@import "./components/navbar";
+@import "./components/footer";
+@import "./components/button";
+@import "./components/heroSection";
+@import "./components/card";
+@import "./components/listCard";
+@import "./components/productCard";
+@import "./components/suggestions";
+@import "./components/productView";
+
+// pages
+@import "./components/pages/contact";
+@import "./components/pages/products";
+@import "./components/pages/productPage";
+@import "./components//pages/cart";
+@import "./components/pages/error";
+
+@import "./components//pages/account";
