@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import Helmet from "../Helmet";
-import { Link } from "react-router-dom";
-import CartView from "../CartView";
-import { useSelector } from "react-redux";
-import { selectRemainingOrderProducts } from "../../redux/selector";
-import numberWithCommas from "../../utils/numberWithCommas";
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
-import Form from "react-bootstrap/Form";
+import Helmet from '../Helmet';
+import { Link } from 'react-router-dom';
+import CartView from '../CartView';
+import { useSelector } from 'react-redux';
+import { selectRemainingOrderProducts } from '../../redux/selector';
+import numberWithCommas from '../../utils/numberWithCommas';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import Form from 'react-bootstrap/Form';
+import { Col, Row } from 'react-bootstrap';
 
 function Cart() {
   let [subTotalPrice, setSubTotalPrice] = useState(0);
@@ -80,10 +81,54 @@ function Cart() {
                   <Modal.Title>Đỉa chỉ nhận hàng</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                  <Form.Label htmlFor="text">Họ & tên người nhận </Form.Label>
-                  <Form.Control type="text" id="text" />
-                  <Form.Label htmlFor="number">Số điện thoại </Form.Label>
-                  <Form.Control type="number" id="number" />
+                  <Form>
+                    <Form.Group className="mb-3">
+                      <Row>
+                        <Col>
+                          <Form.Label>Họ và tên người nhận</Form.Label>
+                          <Form.Control type="text" />
+                        </Col>
+                        <Col>
+                          <Form.Label>Số điện thoại</Form.Label>
+                          <Form.Control />
+                        </Col>
+                      </Row>
+                    </Form.Group>
+
+                    <Form.Group className="mb-3">
+                      <Form.Label>Địa chỉ</Form.Label>
+                      <Form.Control type="text" />
+                    </Form.Group>
+                    <Row>
+                      <Col>
+                        <Form.Label>Hình thức thanh toán</Form.Label>
+                        <Form.Select aria-label="Default select example">
+                          <option>Chọn</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </Form.Select>
+                      </Col>
+
+                      <Col>
+                        <Form.Group className="mb-3">
+                          <Form.Label>Email</Form.Label>
+                          <Form.Control
+                            type="email"
+                            placeholder="name@example.com"
+                          />
+                        </Form.Group>
+                      </Col>
+                    </Row>
+
+                    <Form.Group
+                      className="mb-3"
+                      controlId="exampleForm.ControlTextarea1"
+                    >
+                      <Form.Label>Ghi chú</Form.Label>
+                      <Form.Control as="textarea" rows={3} />
+                    </Form.Group>
+                  </Form>
                 </Modal.Body>
                 <Modal.Footer>
                   <Button variant="secondary" onClick={handleClose}>
